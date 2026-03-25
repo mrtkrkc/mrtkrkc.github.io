@@ -1,22 +1,16 @@
 /* Genel Sıfırlama */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-/* --- ANA SAYFA STİLLERİ --- */
-.home-page { overflow: hidden; height: 100vh; }
-
-.spline-wrapper {
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%; z-index: 1;
-}
-
+/* --- NAVİGASYON --- */
 .nav-link {
-    position: fixed; z-index: 10; text-decoration: none;
+    position: fixed; z-index: 100; text-decoration: none;
     color: #00f2ff; font-weight: bold; font-size: 1.1rem;
     padding: 25px; transition: all 0.3s ease;
     letter-spacing: 2px;
+    /* Yazı arkası koyuluk - Spline logosunu kapatmak için */
+    background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, transparent 70%);
 }
-
 .nav-link:hover { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; transform: scale(1.1); }
 
 .top-left { top: 0; left: 0; }
@@ -24,48 +18,34 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 .bottom-left { bottom: 0; left: 0; }
 .bottom-right { bottom: 0; right: 0; }
 
-/* --- GALERİ SAYFALARI STİLLERİ --- */
-.gallery-page { padding-bottom: 50px; }
-
-.gallery-header {
-    padding: 60px 20px; text-align: center;
-    background: linear-gradient(to bottom, #111, transparent);
-}
-
-.back-btn {
-    position: absolute; left: 20px; top: 20px;
-    color: #555; text-decoration: none; font-size: 0.9rem;
-}
-
-.back-btn:hover { color: #00f2ff; }
-
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 Sütun */
-    gap: 25px;
-}
+/* --- GALERİ VE GÖRSELLER --- */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 20px; }
 
 .grid-item {
-    background: #111;
-    border: 1px solid #222;
-    overflow: hidden;
-    border-radius: 4px;
-    height: 400px; /* Sabit yükseklik düzenli durmasını sağlar */
+    background: #000; border: 1px solid #222; overflow: hidden;
+    height: 500px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
 }
 
 .grid-item img {
-    width: 100%; height: 100%;
-    object-fit: cover; /* Resmi kesmeden kutuya sığdırır */
-    transition: transform 0.5s ease;
+    max-width: 100%; max-height: 100%;
+    object-fit: contain; /* Görseli kesmez, en uzun kenara göre sığdırır */
+    transition: 0.5s;
 }
+.grid-item img:hover { transform: scale(1.02); }
 
-.grid-item img:hover { transform: scale(1.05); }
-
-.grid-item iframe { width: 100%; height: 100%; border: none; }
-
-/* Mobil Uyum (Ekran küçülünce 1 sütuna düşer) */
-@media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
+/* --- LIGHTBOX (BÜYÜTME) --- */
+#lightbox {
+    position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center;
 }
+#lightbox img { max-width: 90%; max-height: 80%; border: 2px solid #00f2ff; }
+.back-btn-light {
+    position: absolute; top: 30px; right: 40px; color: #00f2ff;
+    font-size: 1.5rem; cursor: pointer; font-weight: bold; letter-spacing: 2px;
+}
+.back-btn-light:hover { color: #ff00ff; }
+
+/* --- ABOUT ME EKSTRA --- */
+.about-hero { display: flex; gap: 50px; align-items: center; padding: 100px 0; }
+.profile-img { width: 300px; height: 300px; border-radius: 50%; border: 2px solid #ff00ff; object-fit: cover; }
