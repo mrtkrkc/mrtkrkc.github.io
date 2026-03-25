@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>My Projects</title>
+    <title>Projects | Murat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,20 +19,35 @@
 
     <main class="container">
         <div class="grid">
-            <div class="grid-item" onclick="openLbox('images/projects/resim1.jpg')">
-                <img src="images/projects/resim1.jpg" alt="Project 1">
+            
+            <!-- PROJECT CARD START -->
+            <div class="project-card">
+                <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
+                    <div class="status-badge">PUBLISHED</div>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Cube Match: Cube Puzzle 3D</h2>
+                    <p class="card-description">3D Match 3 game. Clear the board by matching three objects.</p>
+                    
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Puzzle</span>
+                        <span class="tag">3D</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://play.google.com/..." class="btn-link"><i class="fab fa-android"></i> Android</a>
+                        <a href="https://apps.apple.com/..." class="btn-link"><i class="fab fa-apple"></i> iOS</a>
+                    </div>
+                </div>
             </div>
+            <!-- PROJECT CARD END -->
+
+            <!-- Diğer projelerini buraya aynı yapıda kopyalayabilirsin -->
+
         </div>
     </main>
-
-    <div id="lightbox" onclick="closeLbox()">
-        <span class="lightbox-close">BACK</span>
-        <img id="lbox-img">
-    </div>
-
-    <script>
-        function openLbox(s){ document.getElementById('lbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
-        function closeLbox(){ document.getElementById('lightbox').style.display='none'; }
-    </script>
 </body>
 </html>
