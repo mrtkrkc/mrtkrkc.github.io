@@ -2,14 +2,13 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>2D Art Gallery</title>
+    <title>2D Art Collection</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Dinamik Köşe Navigasyonu -->
     <nav>
-        <a href="index.html" class="nav-link top-left" style="color:#ff00ff">HOME</a>
-        <a href="2dart.html" class="nav-link top-right">2D ART</a>
+        <a href="3dart.html" class="nav-link top-left">3D ART</a>
+        <a href="index.html" class="nav-link top-right" style="color:#ff00ff">HOME</a>
         <a href="projects.html" class="nav-link bottom-left">PROJECTS</a>
         <a href="aboutme.html" class="nav-link bottom-right">ABOUT ME</a>
     </nav>
@@ -20,27 +19,20 @@
 
     <main class="container">
         <div class="grid">
-            <div class="grid-item" onclick="openLightbox('images/3dart/resim1.jpg')">
-                <img src="images/3dart/resim1.jpg" alt="Work 1">
+            <div class="grid-item" onclick="openLbox('images/2dart/resim1.jpg')">
+                <img src="images/2dart/resim1.jpg" alt="2D 1">
             </div>
-            <!-- Diğer resimler buraya... -->
         </div>
     </main>
 
-    <!-- Lightbox Yapısı -->
-    <div id="lightbox">
-        <span class="back-btn-light" onclick="closeLightbox()">BACK</span>
-        <img id="lightbox-img" src="" alt="Büyük Görsel">
+    <div id="lightbox" onclick="closeLbox()">
+        <span class="lightbox-close">BACK</span>
+        <img id="lbox-img">
     </div>
 
     <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
+        function openLbox(s){ document.getElementById('lbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
+        function closeLbox(){ document.getElementById('lightbox').style.display='none'; }
     </script>
 </body>
 </html>

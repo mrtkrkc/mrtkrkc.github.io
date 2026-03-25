@@ -2,34 +2,37 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Art Gallery</title>
+    <title>My Projects</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="gallery-page">
+<body>
+    <nav>
+        <a href="3dart.html" class="nav-link top-left">3D ART</a>
+        <a href="2dart.html" class="nav-link top-right">2D ART</a>
+        <a href="index.html" class="nav-link bottom-left" style="color:#ff00ff">HOME</a>
+        <a href="aboutme.html" class="nav-link bottom-right">ABOUT ME</a>
+    </nav>
 
     <header class="gallery-header">
-        <a href="index.html" class="back-btn">← ANA SAYFA</a>
-        <h1>3D ART COLLECTION</h1>
+        <h1>PROJECTS</h1>
     </header>
 
     <main class="container">
         <div class="grid">
-            
-            <div class="grid-item">
-                <img src="images/projects/resim1.jpg" alt="3D Work 1">
+            <div class="grid-item" onclick="openLbox('images/projects/resim1.jpg')">
+                <img src="images/projects/resim1.jpg" alt="Project 1">
             </div>
-
-            <div class="grid-item">
-                <img src="images/projects/resim2.jpg" alt="3D Work 2">
-            </div>
-
-            <div class="grid-item video">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_BURAYA" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            </div>
+        </div>
     </main>
 
+    <div id="lightbox" onclick="closeLbox()">
+        <span class="lightbox-close">BACK</span>
+        <img id="lbox-img">
+    </div>
+
+    <script>
+        function openLbox(s){ document.getElementById('lbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
+        function closeLbox(){ document.getElementById('lightbox').style.display='none'; }
+    </script>
 </body>
 </html>
