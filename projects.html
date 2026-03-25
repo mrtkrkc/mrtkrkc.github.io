@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects | Murat</title>
+    <!-- Font Awesome Linki -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Ana Navigasyon -->
     <nav>
         <a href="3dart.html" class="nav-link top-left">3D ART</a>
         <a href="2dart.html" class="nav-link top-right">2D ART</a>
@@ -15,39 +18,102 @@
 
     <header class="gallery-header">
         <h1>PROJECTS</h1>
+        
+        <!-- Hızlı Erişim Menüsü -->
+        <div class="category-nav">
+            <a href="#steam" class="cat-btn"><i class="fab fa-steam"></i> STEAM</a>
+            <a href="#itch" class="cat-btn"><i class="fab fa-itch-io"></i> ITCH.IO</a>
+            <a href="#mobile" class="cat-btn"><i class="fab fa-google-play"></i> MOBILE</a>
+        </div>
     </header>
 
     <main class="container">
-        <div class="grid">
-            
-            <!-- PROJECT CARD START -->
-            <div class="project-card">
-                <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
-                    <div class="status-badge">PUBLISHED</div>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">Cube Match: Cube Puzzle 3D</h2>
-                    <p class="card-description">3D Match 3 game. Clear the board by matching three objects.</p>
-                    
-                    <div class="tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">Android</span>
-                        <span class="tag">iOS</span>
-                        <span class="tag">Puzzle</span>
-                        <span class="tag">3D</span>
+        
+        <!-- STEAM BÖLÜMÜ -->
+        <section id="steam">
+            <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #00f2ff;">STEAM GAMES</h2>
+            <div class="grid">
+                <!-- Project Card -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
+                        <div class="status-badge">PUBLISHED</div>
                     </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Steam Game Title</h2>
+                        <p class="card-description">Steam platformu için geliştirilen projenin açıklaması buraya gelecek.</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span><span class="tag">3D</span><span class="tag">PC</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fab fa-steam"></i> View on Steam</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- İstediğin kadar kart ekleyebilirsin -->
+            </div>
+        </section>
 
-                    <div class="project-links">
-                        <a href="https://play.google.com/..." class="btn-link"><i class="fab fa-android"></i> Android</a>
-                        <a href="https://apps.apple.com/..." class="btn-link"><i class="fab fa-apple"></i> iOS</a>
+        <!-- ITCH.IO BÖLÜMÜ -->
+        <section id="itch">
+            <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #ff00ff;">ITCH.IO PROJECTS</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
+                        <div class="status-badge" style="background: #ff00ff;">WEB-GL</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Itch.io Game Name</h2>
+                        <p class="card-description">Browser tabanlı veya bağımsız küçük projeler.</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span><span class="tag">WebGL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fab fa-itch-io"></i> Play on Itch</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- PROJECT CARD END -->
+        </section>
 
-            <!-- Diğer projelerini buraya aynı yapıda kopyalayabilirsin -->
+        <!-- MOBILE BÖLÜMÜ -->
+        <section id="mobile">
+            <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #4caf50;">MOBILE APPS</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
+                        <div class="status-badge">PUBLISHED</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Cube Match: Cube Puzzle 3D</h2>
+                        <p class="card-description">3D Match 3 game. Clear the board by matching three objects.</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span><span class="tag">Android</span><span class="tag">iOS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://play.google.com/..." class="btn-link"><i class="fab fa-android"></i> Android</a>
+                            <a href="https://apps.apple.com/..." class="btn-link"><i class="fab fa-apple"></i> iOS</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile için 2. kart örneği -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('images/projects/cubematch/cover1.png');">
+                        <div class="status-badge">DEVELOPMENT</div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Next Mobile Project</h2>
+                        <p class="card-description">Yeni mobil projenin detayları.</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span><span class="tag">C#</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="btn-link" style="opacity: 0.5;">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
     </main>
 </body>
 </html>
