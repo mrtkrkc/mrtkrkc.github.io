@@ -25,7 +25,7 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 .gallery-header h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
 .container { width: 95%; max-width: 1400px; margin: 0 auto; padding-bottom: 100px; }
 
-/* --- KATEGORİ BUTONLARI (Projects Sayfası İçin) --- */
+/* --- KATEGORİ BUTONLARI --- */
 .category-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
 .cat-btn {
     padding: 10px 20px; background: #111; border: 1px solid #333; color: #fff;
@@ -33,11 +33,15 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 }
 .cat-btn:hover { border-color: #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
 
-/* --- GRID YAPISI (Genel) --- */
+/* --- GRID YAPISI (Güncellendi: Kart Boyutu Sabitlendi) --- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Kartların genişliğini 350px ile 420px arasında kısıtlar. 1fr yerine bunu kullandık ki Steam kartı uzamasın. */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
     gap: 30px;
+    /* Kartlar tek kaldığında veya az olduğunda sayfayı ortalar */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* --- 1. GALERİ SİSTEMİ (3D & 2D Art Sayfaları İçin) --- */
@@ -49,22 +53,24 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 .grid-item:hover { border-color: #00f2ff; }
 .grid-item img {
     max-width: 100%; max-height: 100%;
-    object-fit: contain; /* Resimlerin bozulmasını engeller */
+    object-fit: contain;
 }
 
-/* --- 2. PROJECT CARDS SİSTEMİ (Projects Sayfası İçin) --- */
+/* --- 2. PROJECT CARDS SİSTEMİ --- */
 section { scroll-margin-top: 120px; margin-bottom: 100px; }
 
 .project-card {
     background: #111; border-radius: 12px; overflow: hidden;
     border: 1px solid #222; display: flex; flex-direction: column; transition: 0.3s ease;
+    height: 100%; /* Kartların boyunu eşitler */
 }
 .project-card:hover { border-color: #444; transform: translateY(-5px); }
 
 .card-image {
     width: 100%; height: 250px;
-    background-size: cover; /* Kart görselleri alanı kaplar */
+    background-size: cover;
     background-position: center;
+    position: relative; /* Badge için gerekli */
 }
 
 .status-badge {
@@ -72,9 +78,9 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
     color: white; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: bold;
 }
 
-.card-content { padding: 25px; }
+.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
 .card-title { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
-.card-description { font-size: 0.95rem; color: #aaa; margin-bottom: 20px; }
+.card-description { font-size: 0.95rem; color: #aaa; margin-bottom: 20px; flex-grow: 1; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .tag {
@@ -90,7 +96,7 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
 }
 .btn-link:hover { background: #222; border-color: #ff00ff; }
 
-/* --- LIGHTBOX (Büyütme Efekti) --- */
+/* --- LIGHTBOX --- */
 #lightbox {
     position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center;
@@ -118,7 +124,8 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
+    /* Mobilde kartların yanlardan taşmaması için 1fr yaptık */
+    .grid { grid-template-columns: 1fr; padding: 0 10px; }
     .about-content { flex-direction: column; text-align: center; }
     .category-nav { flex-wrap: wrap; }
     .grid-item { height: 350px; }
