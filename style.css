@@ -6,22 +6,46 @@
 html { scroll-behavior: smooth; }
 body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
 
-/* --- NAVİGASYON (Köşelerdeki Butonlar) --- */
+/* --- NAVİGASYON (Köşelerdeki Keskin Butonlar) --- */
 .nav-link {
-    position: fixed; z-index: 1000; text-decoration: none;
-    color: #00f2ff; font-weight: bold; font-size: 1rem;
-    padding: 20px 30px; transition: all 0.3s ease;
+    position: fixed; 
+    z-index: 1000; 
+    text-decoration: none;
+    color: #00f2ff; 
+    font-weight: bold; 
+    font-size: 0.85rem; 
+    padding: 12px 24px; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 2px;
-    background: radial-gradient(circle, rgba(0,0,0,0.9) 0%, transparent 80%);
+    text-transform: uppercase;
+    
+    /* Arka Plan: Keskin Siyah ve Cam Efekti */
+    background-color: rgba(0, 0, 0, 0.9); 
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 4px; /* Hafif modern kavis */
+    backdrop-filter: blur(8px); /* Arkadaki Spline'ı hafif bulanıklaştırır */
+    
+    /* İlk Bakışta Hafif Işıma */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-.nav-link:hover { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; transform: scale(1.1); }
-.top-left { top: 0; left: 0; }
-.top-right { top: 0; right: 0; }
-.bottom-left { bottom: 0; left: 0; }
-.bottom-right { bottom: 0; right: 0; }
+
+/* Hover: Üzerine gelince neon patlaması */
+.nav-link:hover { 
+    color: #000; 
+    background-color: #00f2ff; 
+    border-color: #00f2ff;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.7);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Köşe Yerleşimleri (Sayfa kenarından hafif içeride daha şık durur) */
+.top-left { top: 25px; left: 25px; }
+.top-right { top: 25px; right: 25px; }
+.bottom-left { bottom: 25px; left: 25px; }
+.bottom-right { bottom: 25px; right: 25px; }
 
 /* --- HEADER VE CONTAINER --- */
-.gallery-header { padding: 100px 20px 20px; text-align: center; }
+.gallery-header { padding: 120px 20px 20px; text-align: center; }
 .gallery-header h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
 .container { width: 95%; max-width: 1400px; margin: 0 auto; padding-bottom: 100px; }
 
@@ -33,13 +57,11 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 }
 .cat-btn:hover { border-color: #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
 
-/* --- GRID YAPISI (Güncellendi: Kart Boyutu Sabitlendi) --- */
+/* --- GRID YAPISI --- */
 .grid {
     display: grid;
-    /* Kartların genişliğini 350px ile 420px arasında kısıtlar. 1fr yerine bunu kullandık ki Steam kartı uzamasın. */
     grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
     gap: 30px;
-    /* Kartlar tek kaldığında veya az olduğunda sayfayı ortalar */
     justify-content: center;
     margin-top: 20px;
 }
@@ -62,7 +84,7 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
 .project-card {
     background: #111; border-radius: 12px; overflow: hidden;
     border: 1px solid #222; display: flex; flex-direction: column; transition: 0.3s ease;
-    height: 100%; /* Kartların boyunu eşitler */
+    height: 100%;
 }
 .project-card:hover { border-color: #444; transform: translateY(-5px); }
 
@@ -70,7 +92,7 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
     width: 100%; height: 250px;
     background-size: cover;
     background-position: center;
-    position: relative; /* Badge için gerekli */
+    position: relative;
 }
 
 .status-badge {
@@ -124,9 +146,11 @@ section { scroll-margin-top: 120px; margin-bottom: 100px; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    /* Mobilde kartların yanlardan taşmaması için 1fr yaptık */
     .grid { grid-template-columns: 1fr; padding: 0 10px; }
     .about-content { flex-direction: column; text-align: center; }
     .category-nav { flex-wrap: wrap; }
     .grid-item { height: 350px; }
+    
+    /* Mobilde butonların biraz daha küçük durması için */
+    .nav-link { padding: 10px 18px; font-size: 0.75rem; }
 }
