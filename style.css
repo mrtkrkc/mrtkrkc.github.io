@@ -2,60 +2,117 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 /* --- GENEL AYARLAR --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; line-height: 1.6; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
 
 /* --- NAVİGASYON (Köşelerdeki Keskin Butonlar) --- */
 .nav-link {
-    position: fixed; 
-    z-index: 1000; 
+    position: fixed;
+    z-index: 1000;
     text-decoration: none;
-    color: #00f2ff; 
-    font-weight: bold; 
-    font-size: 0.85rem; 
-    padding: 12px 24px; 
+    color: #00f2ff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 12px 24px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 2px;
     text-transform: uppercase;
-    
     /* Arka Plan: Keskin Siyah ve Cam Efekti */
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(0, 242, 255, 0.3);
-    border-radius: 4px; /* Hafif modern kavis */
-    backdrop-filter: blur(8px); /* Arkadaki Spline'ı hafif bulanıklaştırır */
-    
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
     /* İlk Bakışta Hafif Işıma */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover: Üzerine gelince neon patlaması */
-.nav-link:hover { 
-    color: #000; 
-    background-color: #00f2ff; 
-    border-color: #00f2ff;
-    box-shadow: 0 0 25px rgba(0, 242, 255, 0.7);
-    transform: translateY(-2px) scale(1.05);
+    /* Hover: Üzerine gelince neon patlaması */
+    .nav-link:hover {
+        color: #000;
+        background-color: #00f2ff;
+        border-color: #00f2ff;
+        box-shadow: 0 0 25px rgba(0, 242, 255, 0.7);
+        transform: translateY(-2px) scale(1.05);
+    }
+
+/* Köşe Yerleşimleri */
+.top-left {
+    top: 25px;
+    left: 25px;
 }
 
-/* Köşe Yerleşimleri (Sayfa kenarından hafif içeride daha şık durur) */
-.top-left { top: 25px; left: 25px; }
-.top-right { top: 25px; right: 25px; }
-.bottom-left { bottom: 25px; left: 25px; }
-.bottom-right { bottom: 25px; right: 25px; }
+.top-right {
+    top: 25px;
+    right: 25px;
+}
+
+.bottom-left {
+    bottom: 25px;
+    left: 25px;
+}
+
+.bottom-right {
+    bottom: 25px;
+    right: 25px;
+}
 
 /* --- HEADER VE CONTAINER --- */
-.gallery-header { padding: 120px 20px 20px; text-align: center; }
-.gallery-header h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
-.container { width: 95%; max-width: 1400px; margin: 0 auto; padding-bottom: 100px; }
+.gallery-header {
+    padding: 120px 20px 20px;
+    text-align: center;
+}
+
+    .gallery-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
 
 /* --- KATEGORİ BUTONLARI --- */
-.category-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
-.cat-btn {
-    padding: 10px 20px; background: #111; border: 1px solid #333; color: #fff;
-    text-decoration: none; border-radius: 50px; font-size: 0.85rem; transition: 0.3s;
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
-.cat-btn:hover { border-color: #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+
+.cat-btn {
+    padding: 10px 20px;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+    .cat-btn:hover {
+        border-color: #00f2ff;
+        box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    }
 
 /* --- GRID YAPISI --- */
 .grid {
@@ -68,89 +125,517 @@ body { background-color: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;
 
 /* --- 1. GALERİ SİSTEMİ (3D & 2D Art Sayfaları İçin) --- */
 .grid-item {
-    background: #000; border: 1px solid #1a1a1a;
-    height: 500px; display: flex; align-items: center; justify-content: center;
-    overflow: hidden; cursor: pointer; transition: 0.3s;
+    background: #000;
+    border: 1px solid #1a1a1a;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.grid-item:hover { border-color: #00f2ff; }
-.grid-item img {
-    max-width: 100%; max-height: 100%;
-    object-fit: contain;
-}
+
+    .grid-item:hover {
+        border-color: #00f2ff;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
 
 /* --- 2. PROJECT CARDS SİSTEMİ --- */
-section { scroll-margin-top: 120px; margin-bottom: 100px; }
+section {
+    scroll-margin-top: 120px;
+    margin-bottom: 100px;
+}
 
 .project-card {
-    background: #111; border-radius: 12px; overflow: hidden;
-    border: 1px solid #222; display: flex; flex-direction: column; transition: 0.3s ease;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
     height: 100%;
 }
-.project-card:hover { border-color: #444; transform: translateY(-5px); }
+
+    .project-card:hover {
+        border-color: #444;
+        transform: translateY(-5px);
+    }
 
 .card-image {
-    width: 100%; height: 250px;
+    width: 100%;
+    height: 250px;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 .status-badge {
-    position: absolute; top: 15px; right: 15px; background: #4caf50;
-    color: white; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4caf50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
 }
 
-.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-.card-title { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
-.card-description { font-size: 0.95rem; color: #aaa; margin-bottom: 20px; flex-grow: 1; }
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
 .tag {
-    padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;
-    background: rgba(0, 242, 255, 0.1); color: #00f2ff; border: 1px solid rgba(0, 242, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: rgba(0, 242, 255, 0.1);
+    color: #00f2ff;
+    border: 1px solid rgba(0, 242, 255, 0.3);
 }
 
-.project-links { display: flex; gap: 10px; }
-.btn-link {
-    display: flex; align-items: center; gap: 8px; padding: 10px 18px;
-    background: #1a1a1a; color: #fff; text-decoration: none;
-    border-radius: 8px; font-size: 0.9rem; border: 1px solid #333; transition: 0.3s;
+.project-links {
+    display: flex;
+    gap: 10px;
 }
-.btn-link:hover { background: #222; border-color: #ff00ff; }
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+    .btn-link:hover {
+        background: #222;
+        border-color: #ff00ff;
+    }
 
 /* --- LIGHTBOX --- */
 #lightbox {
-    position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
-#lightbox img { max-width: 90%; max-height: 85%; border: 1px solid #333; }
+
+    #lightbox img {
+        max-width: 90%;
+        max-height: 85%;
+        border: 1px solid #333;
+    }
+
 .lightbox-close {
-    position: absolute; top: 40px; right: 40px; color: #00f2ff;
-    font-size: 1.2rem; cursor: pointer; font-weight: bold;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: #00f2ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* --- ABOUT ME --- */
-.about-content { display: flex; align-items: center; gap: 60px; padding-top: 40px; }
-.profile-img { width: 350px; border-radius: 10px; border: 1px solid #ff00ff; }
-.stats { display: flex; gap: 20px; margin-top: 20px; }
-.stat-box { background: #111; padding: 20px; border-radius: 8px; flex: 1; text-align: center; border: 1px solid #222; }
-.stat-box h3 { color: #00f2ff; }
-
-.social-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.social-btn {
-    display: flex; align-items: center; gap: 10px; padding: 12px 20px;
-    background: #111; color: white; text-decoration: none;
-    border-radius: 10px; border: 1px solid #333; transition: 0.3s;
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding-top: 40px;
 }
-.social-btn:hover { border-color: #ff00ff; background: #252525; transform: scale(1.05); }
+
+.profile-img {
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid #ff00ff;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #222;
+}
+
+    .stat-box h3 {
+        color: #00f2ff;
+    }
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+    .social-btn:hover {
+        border-color: #ff00ff;
+        background: #252525;
+        transform: scale(1.05);
+    }
+
+/* --- PROFESSIONAL JOURNEY (YENİ) --- */
+.journey-section {
+    margin-top: 100px;
+    padding-top: 50px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.journey-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.journey-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, #00f2ff, #ff00ff);
+    }
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: #0a0a0a;
+    border: 3px solid #00f2ff;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 10px #00f2ff;
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(0, 242, 255, 0.1);
+    color: #00f2ff;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.timeline-content {
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    transition: 0.3s ease;
+}
+
+    .timeline-content:hover {
+        border-color: #ff00ff;
+        transform: translateX(10px);
+    }
+
+    .timeline-content h3 {
+        font-size: 1.25rem;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+
+    .timeline-content h4 {
+        color: #aaa;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+        color: #666;
+        font-size: 0.85rem;
+    }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; padding: 0 10px; }
-    .about-content { flex-direction: column; text-align: center; }
-    .category-nav { flex-wrap: wrap; }
-    .grid-item { height: 350px; }
-    
-    /* Mobilde butonların biraz daha küçük durması için */
-    .nav-link { padding: 10px 18px; font-size: 0.75rem; }
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .category-nav {
+        flex-wrap: wrap;
+    }
+
+    .grid-item {
+        height: 350px;
+    }
+
+    .nav-link {
+        padding: 10px 18px;
+        font-size: 0.75rem;
+    }
+
+    /* Journey Responsive */
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-content:hover {
+        transform: none;
+    }
+}
+
+/* --- TECHNICAL SKILLS SECTION (Yeni) --- */
+.skills-section {
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: #111;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #222;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Taşmayı önler */
+}
+
+    .skill-card:hover {
+        border-color: #00f2ff;
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+    }
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #00f2ff;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+    .skill-tags span {
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        background: rgba(0, 242, 255, 0.05);
+        color: #00f2ff;
+        border: 1px solid rgba(0, 242, 255, 0.2);
+        transition: 0.2s;
+    }
+
+        .skill-tags span:hover {
+            background: rgba(0, 242, 255, 0.15);
+            border-color: #00f2ff;
+            transform: scale(1.05);
+        }
+
+/* Mobilde kartların dışarı taşmaması için */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+}
+
+/* --- EDUCATION SECTION (Yeni) --- */
+.education-section {
+    margin-top: 100px;
+    padding-top: 50px;
+    border-top: 1px solid #1a1a1a;
+    padding-bottom: 50px; /* Sayfa sonunda boşluk */
+}
+
+/* Kartı ortalamak için wrapper */
+.education-single-wrapper {
+    display: flex;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center;
+    margin-top: 40px;
+}
+
+.education-card {
+    background: #111;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #222;
+    width: 100%;
+    max-width: 700px; /* Kartın çok büyümesini engeller */
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+    /* Yeşil Neon Efekti */
+    .education-card:hover {
+        border-color: #4caf50; /* Yeşil */
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+    }
+
+/* Kart Başlığı (Logo ve İsim) */
+.ed-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.university-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.ed-title-group h3 {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.ed-date {
+    color: #4caf50; /* Yeşil */
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Kart İçeriği */
+.ed-degree {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ed-details {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* Mobilde Logoyu Küçültme */
+@media (max-width: 480px) {
+    .ed-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .university-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .education-card {
+        padding: 20px;
+    }
 }
