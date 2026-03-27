@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>3D Art Collection</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Spline Arkaplanı Sabitleme */
+        .spline-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* İçeriğin arkasında kalması için */
+        }
+    </style>
 </head>
 <body>
+    <!-- ARKA PLAN SPLINE (İndex sayfan gibi iframe mantığı) -->
+    <iframe src='https://my.spline.design/textwipe-6f8911e6a2e4d027b439a8c45d7b7706/'
+            frameborder='0'
+            class="spline-bg">
+    </iframe>
     <nav>
         <a href="index.html" class="nav-link top-left" style="color:#ff00ff">HOME</a>
         <a href="2dart.html" class="nav-link top-right">2D ART</a>
@@ -107,15 +124,7 @@
             <div class="grid-item" onclick="openLbox('images/3dart/resim29.jpg')">
                 <img src="images/3dart/resim29.jpg" alt="3D 29">
             </div>
-            <div class="grid-item" onclick="openLbox('images/3dart/resim30.jpg')">
-                <img src="images/3dart/resim30.jpg" alt="3D 30">
-            </div>
-            <div class="grid-item" onclick="openLbox('images/3dart/resim31.jpg')">
-                <img src="images/3dart/resim31.jpg" alt="3D 31">
-            </div>
-            <div class="grid-item" onclick="openLbox('images/3dart/resim32.jpg')">
-                <img src="images/3dart/resim32.jpg" alt="3D 32">
-            </div>
+
         </div>
     </main>
 
@@ -125,8 +134,8 @@
     </div>
 
     <script>
-        function openLbox(s){ document.getElementById('lbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
-        function closeLbox(){ document.getElementById('lightbox').style.display='none'; }
+        function openLbox(s) { document.getElementById('lbox-img').src = s; document.getElementById('lightbox').style.display = 'flex'; }
+        function closeLbox() { document.getElementById('lightbox').style.display = 'none'; }
     </script>
 </body>
 </html>

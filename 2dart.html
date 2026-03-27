@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>2D Art Collection</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Spline Arkaplanı Sabitleme */
+        .spline-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* İçeriğin arkasında kalması için */
+        }
+    </style>
 </head>
 <body>
+    <!-- ARKA PLAN SPLINE (İndex sayfan gibi iframe mantığı) -->
+    <iframe src='https://my.spline.design/textwipe-6f8911e6a2e4d027b439a8c45d7b7706/'
+            frameborder='0'
+            class="spline-bg">
+    </iframe>
     <nav>
         <a href="3dart.html" class="nav-link top-left">3D ART</a>
         <a href="index.html" class="nav-link top-right" style="color:#ff00ff">HOME</a>
@@ -16,58 +33,58 @@
     <header class="gallery-header">
         <h1>2D ART - UI/UX COLLECTION</h1>
     </header>
-    
-        <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #4caf50;">UI/UX</h2>
-        <main class="container">
-            <div class="grid">
-                <div class="grid-item" onclick="openLbox('images/2dart/resim1.jpg')">
-                    <img src="images/2dart/resim1.jpg" alt="2D 1">
-                </div>
-                <div class="grid-item" onclick="openLbox('images/2dart/resim2.jpg')">
-                    <img src="images/2dart/resim2.jpg" alt="2D 1">
-                </div>
-                <div class="grid-item" onclick="openLbox('images/2dart/resim3.jpg')">
-                    <img src="images/2dart/resim3.jpg" alt="2D 1">
-                </div>
-                <div class="grid-item" onclick="openLbox('images/2dart/resim4.jpg')">
-                    <img src="images/2dart/resim4.jpg" alt="2D 1">
-                </div>
-                <div class="grid-item" onclick="openLbox('images/2dart/resim5.jpg')">
-                    <img src="images/2dart/resim5.jpg" alt="2D 1">
-                </div>
+
+    <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #4caf50;">UI/UX</h2>
+    <main class="container">
+        <div class="grid">
+            <div class="grid-item" onclick="openLbox('images/2dart/resim1.jpg')">
+                <img src="images/2dart/resim1.jpg" alt="2D 1">
             </div>
-        </main>
-
-        
-            <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #4caf50;">2D ART</h2>
-            <main class="container">
-                <div class="grid">
-                    <div class="grid-item" onclick="openLbox('images/2dart/2dart1.jpg')">
-                        <img src="images/2dart/2dart1.jpg" alt="2D 1">
-                    </div>
-                    <div class="grid-item" onclick="openLbox('images/2dart/2dart2.jpg')">
-                        <img src="images/2dart/2dart2.jpg" alt="2D 1">
-                    </div>
-                    <div class="grid-item" onclick="openLbox('images/2dart/2dart3.jpg')">
-                        <img src="images/2dart/2dart3.jpg" alt="2D 1">
-                    </div>
-                    <div class="grid-item" onclick="openLbox('images/2dart/2dart4.jpg')">
-                        <img src="images/2dart/2dart4.jpg" alt="2D 1">
-                    </div>
-                    <div class="grid-item" onclick="openLbox('images/2dart/2dart5.jpg')">
-                        <img src="images/2dart/2dart5.jpg" alt="2D 1">
-                    </div>
-                </div>
-            </main>
-
-            <div id="lightbox" onclick="closeLbox()">
-                <span class="lightbox-close">BACK</span>
-                <img id="lbox-img">
+            <div class="grid-item" onclick="openLbox('images/2dart/resim2.jpg')">
+                <img src="images/2dart/resim2.jpg" alt="2D 1">
             </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/resim3.jpg')">
+                <img src="images/2dart/resim3.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/resim4.jpg')">
+                <img src="images/2dart/resim4.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/resim5.jpg')">
+                <img src="images/2dart/resim5.jpg" alt="2D 1">
+            </div>
+        </div>
+    </main>
 
-            <script>
-                function openLbox(s) { document.getElementById('lbox-img').src = s; document.getElementById('lightbox').style.display = 'flex'; }
-                function closeLbox() { document.getElementById('lightbox').style.display = 'none'; }
-            </script>
+
+    <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 3px; color: #4caf50;">2D ART</h2>
+    <main class="container">
+        <div class="grid">
+            <div class="grid-item" onclick="openLbox('images/2dart/2dart1.jpg')">
+                <img src="images/2dart/2dart1.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/2dart2.jpg')">
+                <img src="images/2dart/2dart2.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/2dart3.jpg')">
+                <img src="images/2dart/2dart3.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/2dart4.jpg')">
+                <img src="images/2dart/2dart4.jpg" alt="2D 1">
+            </div>
+            <div class="grid-item" onclick="openLbox('images/2dart/2dart5.jpg')">
+                <img src="images/2dart/2dart5.jpg" alt="2D 1">
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" onclick="closeLbox()">
+        <span class="lightbox-close">BACK</span>
+        <img id="lbox-img">
+    </div>
+
+    <script>
+        function openLbox(s) { document.getElementById('lbox-img').src = s; document.getElementById('lightbox').style.display = 'flex'; }
+        function closeLbox() { document.getElementById('lightbox').style.display = 'none'; }
+    </script>
 </body>
 </html>
