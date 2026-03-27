@@ -2,10 +2,31 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>About Me</title>
+    <title>About Me | Murat</title>
+    <!-- Font Awesome (İkonlar için şart) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Spline Arkaplanı Sabitleme */
+        .spline-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* İçeriğin arkasında kalması için */
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ARKA PLAN SPLINE (İndex sayfan gibi iframe mantığı) -->
+    <iframe src='https://my.spline.design/textwipe-6f8911e6a2e4d027b439a8c45d7b7706/'
+            frameborder='0'
+            class="spline-bg">
+    </iframe>
+
     <nav>
         <a href="3dart.html" class="nav-link top-left">3D ART</a>
         <a href="2dart.html" class="nav-link top-right">2D ART</a>
@@ -24,7 +45,6 @@
                 <h2>Merhaba, Ben Murat</h2>
                 <p>
                     Oyunlarla olan bağım, çocukken biriktirdiğim oyun kasetleriyle başladı; bugün ise bu tutkuyu bir "Retro Oyun Koleksiyoneri" ve "Multi-disipliner Sanatçı" olarak sürdürüyorum. 2018 yılında Çizgi Film ve Animasyon bölümünden mezun olduktan sonra, oyun dünyasının mutfağına girerek 3D Art alanında kendimi derinleştirdim.
-
                     7 yılı aşkın profesyonel kariyerimde; mobil oyun sektöründe 3D Artist, 2D & UI/UX Designer, Lead Artist ve Technical Artist gibi geniş bir yelpazede roller üstlendim. Rigging'den Sculpting'e, kullanıcı dostu arayüz tasarımlarından (UI/UX) Shader yazımına ve Particle efektlerine kadar üretimin her aşamasında aktif olarak yer aldım. Unity oyun motorunda kazandığım teknik derinliği, son dönemde AI ve Vibe Coding ile birleştirerek kendi oyun prototiplerimi hayata geçiriyorum. Benim için oyun geliştirmek, sadece bir iş değil; hayal ettiğim dünyaları teknik ve estetiğin gücüyle somutlaştırma sanatı.
                 </p>
 
@@ -33,23 +53,12 @@
                     <div class="stat-box"><h3>50+</h3><p>Proje</p></div>
                 </div>
 
-                <!-- SOSYAL MEDYA TUŞLARI -->
                 <div class="social-buttons">
-                    <a href="https://www.linkedin.com/in/murat-karako%C3%A7-576b33139/" target="_blank" class="social-btn">
-                        <i class="fab fa-linkedin-in"></i> linkedin
-                    </a>
-                    <a href="https://github.com/mrtkrkc" target="_blank" class="social-btn">
-                        <i class="fab fa-github"></i> github
-                    </a>
-                    <a href="https://headlong.itch.io/" target="_blank" class="social-btn">
-                        <i class="fab fa-itch-io"></i> itchio
-                    </a>
-                    <a href="https://www.behance.net/murat_" target="_blank" class="social-btn">
-                        <i class="fab fa-behance"></i> behance
-                    </a>
-                    <a href="https://steamcommunity.com/id/HeadlongHs/" target="_blank" class="social-btn">
-                        <i class="fab fa-steam"></i> steam
-                    </a>
+                    <a href="https://www.linkedin.com/in/murat-karako%C3%A7-576b33139/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i> linkedin</a>
+                    <a href="https://github.com/mrtkrkc" target="_blank" class="social-btn"><i class="fab fa-github"></i> github</a>
+                    <a href="https://headlong.itch.io/" target="_blank" class="social-btn"><i class="fab fa-itch-io"></i> itchio</a>
+                    <a href="https://www.behance.net/murat_" target="_blank" class="social-btn"><i class="fab fa-behance"></i> behance</a>
+                    <a href="https://steamcommunity.com/id/HeadlongHs/" target="_blank" class="social-btn"><i class="fab fa-steam"></i> steam</a>
                 </div>
             </div>
         </div>
@@ -57,9 +66,7 @@
         <section class="skills-section">
             <h2 class="journey-title"><i class="fas fa-tools"></i> Technical Skills</h2>
             <p class="journey-subtitle">Technologies and tools I work with daily</p>
-
             <div class="skills-grid">
-
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-cube"></i></div>
                     <h3>3D Art</h3>
@@ -67,40 +74,28 @@
                         <span>Blender</span><span>Maya</span><span>Cinema4D</span><span>Houdini</span><span>Marmoset Toolbag</span><span>Substance Painter</span><span>Substance Designer</span>
                     </div>
                 </div>
-
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-palette"></i></div>
                     <h3>2D Art</h3>
-                    <div class="skill-tags">
-                        <span>Photoshop</span><span>Illustrator</span>
-                    </div>
+                    <div class="skill-tags"><span>Photoshop</span><span>Illustrator</span></div>
                 </div>
-
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-running"></i></div>
                     <h3>Animation & Motion</h3>
-                    <div class="skill-tags">
-                        <span>Spine: 2D</span><span>Toon Boom</span><span>After Effects</span><span>Premiere Pro</span>
-                    </div>
+                    <div class="skill-tags"><span>Spine: 2D</span><span>Toon Boom</span><span>After Effects</span><span>Premiere Pro</span></div>
                 </div>
-
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
                     <h3>Game Engines</h3>
-                    <div class="skill-tags">
-                        <span>Unity</span><span>Unreal</span><span>Godot</span>
-                    </div>
+                    <div class="skill-tags"><span>Unity</span><span>Unreal</span><span>Godot</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- YENİ BÖLÜM: Professional Journey -->
         <section class="journey-section">
             <h2 class="journey-title"><i class="fas fa-briefcase"></i> Professional Journey</h2>
             <p class="journey-subtitle">Key milestones in my career development</p>
-
             <div class="timeline">
-                <!-- İş 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Oca 2025 - Mar 2026</div>
@@ -110,25 +105,21 @@
                         <p>1 yıl 3 ay</p>
                     </div>
                 </div>
-
-                <!-- İş 2 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Oca 2023 - Oca 2025</div>
                     <div class="timeline-content">
                         <h3>Senior 3D Artist</h3>
-                        <h4>megafortuna · Tam zamanlı</h4>
-                        <p>2 yıl 1 ay | Bursa, Türkiye · Ofiste</p>
+                        <h4>megafortuna</h4>
+                        <p>2 yıl 1 ay</p>
                     </div>
                 </div>
-
-                <!-- İş 3 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Oca 2021 - Oca 2023</div>
                     <div class="timeline-content">
                         <h3>3D Artist</h3>
-                        <h4>POW Games · Tam zamanlı</h4>
+                        <h4>POW Games</h4>
                         <p>2 yıl 1 ay</p>
                     </div>
                 </div>
@@ -143,13 +134,13 @@
                         <p>1 yıl | Bursa, Türkiye</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <section class="education-section">
             <h2 class="journey-title"><i class="fas fa-graduation-cap"></i> Education</h2>
             <p class="journey-subtitle">Academic background</p>
-
             <div class="education-single-wrapper">
                 <div class="education-card">
                     <div class="ed-header">
@@ -166,7 +157,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 </body>
 </html>
