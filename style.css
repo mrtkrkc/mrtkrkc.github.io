@@ -715,3 +715,16 @@ body {
     .social-btn:hover {
         background: rgba(255, 255, 255, 0.08);
     }
+
+.grid-item.sketchfab-container {
+    padding: 0; /* İç boşluğu sıfırla */
+    overflow: hidden;
+    background: #000; /* Yüklenirken arkada siyah dursun */
+    min-height: 250px; /* Diğer resim kutularınla benzer bir yükseklik ver */
+}
+
+.grid-item iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
